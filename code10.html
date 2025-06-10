@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function fillvalue(){
+           var db = ["rakesh","bhavya","ajay","krish","mohit","apple","pizza"];
+           var names= document.getElementsByTagName("input");
+          for (name in names)
+          {
+           names[name].value=db[name];
+          }
+        }
+
+    </script>
+</head>
+<body>
+  name1  <input />
+    <br/>
+   name2 <input/>
+    <br/>
+   name3 <input/>
+    <br/>
+  name4 <input/>
+    <br/>
+   name5 <input/>
+    <br/>
+      name5 <input/>
+    <br/>
+      name5 <input/>
+    <br/>
+
+
+   <button onclick="fillvalue()">click me to fill value</button>
+</body>
+</html>
