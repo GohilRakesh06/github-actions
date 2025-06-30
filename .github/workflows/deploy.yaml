@@ -1,0 +1,34 @@
+name: Deploy webpage to github pages
+
+on:
+  push:
+    branches:
+    - main:
+
+permissions: 
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout Source repo
+        uses: actions/checkout@v4
+
+      - name: setup pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifacts
+        uses: actions/upload-pages-artifacts@v3
+        with: 
+          path: '.'
+
+      - name: Upload to github pages
+        uses: actions/deploy-pages@v4
+
